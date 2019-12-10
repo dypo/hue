@@ -1,0 +1,8 @@
+name: Hue
+main: com.dylan.hue.HuePlugin
+version: 0.1
+api-version: 1.14
+commands:
+    cc:
+        description: Sets your desired chat color.
+        usage: /cc <red|gold|darkred|etc.>
