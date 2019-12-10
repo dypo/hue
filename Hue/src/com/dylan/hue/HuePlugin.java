@@ -11,12 +11,14 @@ public class HuePlugin extends JavaPlugin {
 
 	@Override
 	public void onEnable() {
+		saveDefaultConfig();
+		
 		getServer().getPluginManager().registerEvents(new PlayerChatEvent(), this);
 		this.getCommand("cc").setExecutor(new HueCommand());
 	}
 	
 	@Override
 	public void onDisable() {
-		
+		saveConfig();
 	}
 }
