@@ -25,95 +25,189 @@ public class HueCommand implements CommandExecutor {
 			
 		
 			if (args.length == 0) {
-				sender.sendMessage(Utils.chat(Utils.PREFIX) + "Usage: /cc <&c, &9, darkred, etc.>");
-				sender.sendMessage(Utils.chat(Utils.PREFIX + "&fSets your persistant chat color."));
+				sender.sendMessage(Utils.chat(Utils.PREFIX) + "Usage: /hue <&9, darkred, off, etc.>");
+				sender.sendMessage(Utils.chat(Utils.PREFIX + "&fSets your persistent chat color."));
 				sender.sendMessage(Utils.chat("&cAvailable colors:"));
 				sender.sendMessage(Utils.chat("&11 &22 &33 &44 &55 &66 &77 &88 &99"));
-				sender.sendMessage(Utils.chat("&aa &bb &cc &dd &ee &ff"));
+				sender.sendMessage(Utils.chat("&00 &aa &bb &cc &dd &ee &ff"));
 				return true;
 			}
 			
 			String colorText = args[0].toLowerCase();
 	
 			switch (colorText) {
+			
+			case "&1":
+			case "darkblue":
+				if (!player.hasPermission("hue.use.darkblue")) {
+					player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
+					break;
+				}
+				HuePlugin.codes.setPlayerCode(player, "&1", "dark blue");
+				// player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &1dark blue!"));
+				break;
+				
 			case "&c":
 			case "red":
-				HuePlugin.codes.setPlayerCode(player, "&c");
-				player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &cred!"));
+				if (!player.hasPermission("hue.use.red")) {
+					player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
+					break;
+				}
+				HuePlugin.codes.setPlayerCode(player, "&c", "red");
+				// player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &cred!"));
 				break;
+				
 			case "&4":
 			case "darkred":
-				HuePlugin.codes.setPlayerCode(player, "&4");
-				player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &4dark red!"));
+				if (!player.hasPermission("hue.use.darkred")) {
+					player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
+					break;
+				}
+				HuePlugin.codes.setPlayerCode(player, "&4", "dark red");
+				// player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &4dark red!"));
 				break;
+				
 			case "&6":
 			case "gold":
-				HuePlugin.codes.setPlayerCode(player, "&6");
-				player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &6gold!"));
+				if (!player.hasPermission("hue.use.gold")) {
+					player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
+					break;
+				}
+				HuePlugin.codes.setPlayerCode(player, "&6", "gold");
+				// player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &6gold!"));
 				break;
+				
 			case "&e":
 			case "yellow":
-				HuePlugin.codes.setPlayerCode(player, "&e");
-				player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &eyellow!"));
+				if (!player.hasPermission("hue.use.yellow")) {
+					player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
+					break;
+				}
+				HuePlugin.codes.setPlayerCode(player, "&e", "yellow");
+				// player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &eyellow!"));
 				break;
+				
 			case "&2":
 			case "darkgreen":
-				HuePlugin.codes.setPlayerCode(player, "&2");
-				player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &2dark green!"));
+				if (!player.hasPermission("hue.use.darkgreen")) {
+					player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
+					break;
+				}
+				HuePlugin.codes.setPlayerCode(player, "&2", "dark green");
+				// player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &2dark green!"));
 				break;
+				
 			case "&a":
 			case "green":
-				HuePlugin.codes.setPlayerCode(player, "&a");
-				player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &agreen!"));
+				if (!player.hasPermission("hue.use.green")) {
+					player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
+					break;
+				}
+				HuePlugin.codes.setPlayerCode(player, "&a", "green");
+				// player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &agreen!"));
 				break;
 			case "&b":
 			case "aqua":
-				HuePlugin.codes.setPlayerCode(player, "&b");
-				player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &baqua!"));
+				if (!player.hasPermission("hue.use.aqua")) {
+					player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
+					break;
+				}
+				HuePlugin.codes.setPlayerCode(player, "&b", "aqua");
+				// player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &baqua!"));
 				break;
+				
 			case "&3":
 			case "darkaqua":
-				HuePlugin.codes.setPlayerCode(player, "&3");
-				player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &3dark aqua!"));
+				if (!player.hasPermission("hue.use.darkaqua")) {
+					player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
+					break;
+				}
+				HuePlugin.codes.setPlayerCode(player, "&3", "dark aqua");
+				// player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &3dark aqua!"));
 				break;
+				
 			case "&9":
 			case "blue":
-				HuePlugin.codes.setPlayerCode(player, "&9");
-				player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &9blue!"));
+				if (!player.hasPermission("hue.use.blue")) {
+					player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
+					break;
+				}
+				HuePlugin.codes.setPlayerCode(player, "&9", "blue");
+				// player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &9blue!"));
 				break;
+				
 			case "&d":
 			case "lightpurple":
-				HuePlugin.codes.setPlayerCode(player, "&d");
-				player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &dlight purple!"));
+				if (!player.hasPermission("hue.use.lightpurple")) {
+					player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
+					break;
+				}
+				HuePlugin.codes.setPlayerCode(player, "&d", "light purple");
+				// player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &dlight purple!"));
 				break;
+				
 			case "&5":
 			case "darkpurple":
-				HuePlugin.codes.setPlayerCode(player, "&5");
-				player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &5dark purple!"));
+				if (!player.hasPermission("hue.use.darkpurple")) {
+					player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
+					break;
+				}
+				HuePlugin.codes.setPlayerCode(player, "&5", "dark purple");
+				// player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &5dark purple!"));
 				break;
+				
 			case "&f":
 			case "white":
-				HuePlugin.codes.setPlayerCode(player, "&f");
-				player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &fwhite!"));
+				if (!player.hasPermission("hue.use.white")) {
+					player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
+					break;
+				}
+				HuePlugin.codes.setPlayerCode(player, "&f", "white");
+				player.sendMessage(Utils.chat("&f----------------------- " + Utils.PREFIX + "&f-----------------------"));
+				player.sendMessage(Utils.chat("&bIf you are trying to disable your color, please use &9/hue off"));
+				player.sendMessage(Utils.chat("----------------------------------------------------"));
+
+				// player.sendMessage(Utils.chat(Utils.PREFIX + "&color set to &fwhite!"));
 				break;
+				
 			case "&0":
 			case "black":
-				HuePlugin.codes.setPlayerCode(player, "&0");
-				player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &0black!"));
+				if (!player.hasPermission("hue.use.black")) {
+					player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
+					break;
+				}
+				HuePlugin.codes.setPlayerCode(player, "&0", "black");
+				// player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &0black!"));
 				break;
+				
 			case "&8":
 			case "darkgray":
-				HuePlugin.codes.setPlayerCode(player, "&8");
-				player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &8dark gray!"));
+				if (!player.hasPermission("hue.use.darkgray")) {
+					player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
+					break;
+				}
+				HuePlugin.codes.setPlayerCode(player, "&8", "dark gray");
+				// player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &8dark gray!"));
 				break;
+				
 			case "&7":
 			case "gray":
-				HuePlugin.codes.setPlayerCode(player, "&7");
-				player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &7gray!"));
-	
+				if (!player.hasPermission("hue.use.gray")) {
+					player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
+					break;
+				}
+				HuePlugin.codes.setPlayerCode(player, "&7", "gray");
+				// player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &7gray!"));
+				break;
+				
+			case "version":
+				player.sendMessage(Utils.chat(Utils.PREFIX + "&bH&3u&9e &3" + HuePlugin.getPlugin(HuePlugin.class).getDescription().getVersion() + " &b- &9Dylan"));
+				break;
+			case "off":
+				HuePlugin.codes.setPlayerCode(player, "", "&cOFF");
 				break;
 			default:
-				player.sendMessage(Utils.chat(Utils.PREFIX + "&f" + args[0] + " &cis not a valid color."));
+				player.sendMessage(Utils.chat(Utils.PREFIX + "&f" + args[0] + " &cis not a valid color. :("));
 			}
 			return true;	
 		}

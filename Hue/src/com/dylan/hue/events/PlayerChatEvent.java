@@ -13,6 +13,7 @@ public class PlayerChatEvent implements Listener {
 	public void onPlayerChat(AsyncPlayerChatEvent event) {
 		String message = event.getMessage();
 		String code = HuePlugin.codes.getPlayerCode(event.getPlayer());
-		event.setMessage(Utils.chat(code + message));
+		if (code.equalsIgnoreCase("") || code != null)
+			event.setMessage(Utils.chat(code + message));
 	}
 }

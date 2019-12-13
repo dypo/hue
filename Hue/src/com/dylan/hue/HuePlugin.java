@@ -14,7 +14,7 @@ public class HuePlugin extends JavaPlugin {
 		saveDefaultConfig();
 		
 		getServer().getPluginManager().registerEvents(new PlayerChatEvent(), this);
-		this.getCommand("cc").setExecutor(new HueCommand());
+		this.getCommand("hue").setExecutor(new HueCommand());
 	}
 	
 	@Override
