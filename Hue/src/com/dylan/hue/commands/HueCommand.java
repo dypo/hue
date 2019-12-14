@@ -201,7 +201,7 @@ public class HueCommand implements CommandExecutor {
 				break;
 				
 			case "version":
-				player.sendMessage(Utils.chat(Utils.PREFIX + "&bH&3u&9e &3" + HuePlugin.getPlugin(HuePlugin.class).getDescription().getVersion() + " &b- &9Dylan"));
+				player.sendMessage(Utils.chat(Utils.PREFIX + "&bH&3u&9e &3" + HuePlugin.getPlugin(HuePlugin.class).getDescription().getVersion() + " &b- by &9Dylan"));
 				break;
 			case "off":
 				HuePlugin.codes.setPlayerCode(player, "", "&cOFF");

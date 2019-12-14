@@ -36,6 +36,6 @@ public class PlayerCodes {
 
 		HuePlugin.getPlugin(HuePlugin.class).saveConfig();
 		Utils.sendActionBar(player, Utils.chat("&bH&3u&9e &f- Chat color has been changed to " + code + color + "!"));
-		player.playSound(player.getLocation(), Sound.ITEM_FLINTANDSTEEL_USE, 8, 4);
+		player.playSound(player.getLocation(), Sound.UI_BUTTON_CLICK, 9, 4);
 	}
 }
