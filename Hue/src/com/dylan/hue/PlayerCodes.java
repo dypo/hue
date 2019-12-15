@@ -25,15 +25,14 @@ public class PlayerCodes {
 	
 	public void setPlayerCode(Player player, String code, String color) {
 		// playerCode.put(player.getName(), code);
-		String playerSetting = HuePlugin.getPlugin(HuePlugin.class).getConfig().getString(player.getName());
-		
-		if (playerSetting == null) {
+		if (color.equalsIgnoreCase("off")) {
+			HuePlugin.getPlugin(HuePlugin.class).getConfig().addDefault(player.getName(), null);
+			HuePlugin.getPlugin(HuePlugin.class).getConfig().set(player.getName(), null);
+		}
+		else {
 			HuePlugin.getPlugin(HuePlugin.class).getConfig().addDefault(player.getName(), code);
 			HuePlugin.getPlugin(HuePlugin.class).getConfig().set(player.getName(), code);
 		}
-		else 
-			HuePlugin.getPlugin(HuePlugin.class).getConfig().set(player.getName(), code);
-
 		HuePlugin.getPlugin(HuePlugin.class).saveConfig();
 		Utils.sendActionBar(player, Utils.chat("&bH&3u&9e &f- Chat color has been changed to " + code + color + "!"));
 		player.playSound(player.getLocation(), Sound.UI_BUTTON_CLICK, 9, 4);

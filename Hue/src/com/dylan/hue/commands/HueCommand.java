@@ -27,7 +27,7 @@ public class HueCommand implements CommandExecutor {
 			if (args.length == 0) {
 				sender.sendMessage(Utils.chat(Utils.PREFIX) + "Usage: /hue <&9, darkred, off, etc.>");
 				sender.sendMessage(Utils.chat(Utils.PREFIX + "&fSets your persistent chat color."));
-				sender.sendMessage(Utils.chat("&cAvailable colors:"));
+				sender.sendMessage(Utils.chat("&cAvailable colors: &6&&e<colorcode>"));
 				sender.sendMessage(Utils.chat("&11 &22 &33 &44 &55 &66 &77 &88 &99"));
 				sender.sendMessage(Utils.chat("&00 &aa &bb &cc &dd &ee &ff"));
 				return true;
