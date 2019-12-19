@@ -5,6 +5,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import com.dylan.hue.ColorGUI;
 import com.dylan.hue.HuePlugin;
 import com.dylan.hue.utils.Utils;
 
@@ -25,11 +26,9 @@ public class HueCommand implements CommandExecutor {
 			
 		
 			if (args.length == 0) {
-				sender.sendMessage(Utils.chat(Utils.PREFIX) + "Usage: /hue <&9, darkred, off, etc.>");
-				sender.sendMessage(Utils.chat(Utils.PREFIX + "&fSets your persistent chat color."));
-				sender.sendMessage(Utils.chat("&cAvailable colors: &6&&e<colorcode>"));
-				sender.sendMessage(Utils.chat("&11 &22 &33 &44 &55 &66 &77 &88 &99"));
-				sender.sendMessage(Utils.chat("&00 &aa &bb &cc &dd &ee &ff"));
+				ColorGUI gui = new ColorGUI();
+				gui.initializeItems();
+				gui.openInventory(player);
 				return true;
 			}
 			
@@ -54,7 +53,6 @@ public class HueCommand implements CommandExecutor {
 					break;
 				}
 				HuePlugin.codes.setPlayerCode(player, "&c", "red");
-				// player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &cred!"));
 				break;
 				
 			case "&4":
@@ -64,7 +62,6 @@ public class HueCommand implements CommandExecutor {
 					break;
 				}
 				HuePlugin.codes.setPlayerCode(player, "&4", "dark red");
-				// player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &4dark red!"));
 				break;
 				
 			case "&6":
@@ -74,7 +71,6 @@ public class HueCommand implements CommandExecutor {
 					break;
 				}
 				HuePlugin.codes.setPlayerCode(player, "&6", "gold");
-				// player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &6gold!"));
 				break;
 				
 			case "&e":
@@ -84,7 +80,6 @@ public class HueCommand implements CommandExecutor {
 					break;
 				}
 				HuePlugin.codes.setPlayerCode(player, "&e", "yellow");
-				// player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &eyellow!"));
 				break;
 				
 			case "&2":
@@ -94,7 +89,6 @@ public class HueCommand implements CommandExecutor {
 					break;
 				}
 				HuePlugin.codes.setPlayerCode(player, "&2", "dark green");
-				// player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &2dark green!"));
 				break;
 				
 			case "&a":
@@ -104,7 +98,6 @@ public class HueCommand implements CommandExecutor {
 					break;
 				}
 				HuePlugin.codes.setPlayerCode(player, "&a", "green");
-				// player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &agreen!"));
 				break;
 			case "&b":
 			case "aqua":
@@ -113,7 +106,6 @@ public class HueCommand implements CommandExecutor {
 					break;
 				}
 				HuePlugin.codes.setPlayerCode(player, "&b", "aqua");
-				// player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &baqua!"));
 				break;
 				
 			case "&3":
@@ -123,7 +115,6 @@ public class HueCommand implements CommandExecutor {
 					break;
 				}
 				HuePlugin.codes.setPlayerCode(player, "&3", "dark aqua");
-				// player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &3dark aqua!"));
 				break;
 				
 			case "&9":
@@ -133,7 +124,6 @@ public class HueCommand implements CommandExecutor {
 					break;
 				}
 				HuePlugin.codes.setPlayerCode(player, "&9", "blue");
-				// player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &9blue!"));
 				break;
 				
 			case "&d":
@@ -143,7 +133,6 @@ public class HueCommand implements CommandExecutor {
 					break;
 				}
 				HuePlugin.codes.setPlayerCode(player, "&d", "light purple");
-				// player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &dlight purple!"));
 				break;
 				
 			case "&5":
@@ -153,7 +142,6 @@ public class HueCommand implements CommandExecutor {
 					break;
 				}
 				HuePlugin.codes.setPlayerCode(player, "&5", "dark purple");
-				// player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &5dark purple!"));
 				break;
 				
 			case "&f":
@@ -167,7 +155,6 @@ public class HueCommand implements CommandExecutor {
 				player.sendMessage(Utils.chat("&bIf you are trying to disable your color, please use &9/hue off"));
 				player.sendMessage(Utils.chat("----------------------------------------------------"));
 
-				// player.sendMessage(Utils.chat(Utils.PREFIX + "&color set to &fwhite!"));
 				break;
 				
 			case "&0":
@@ -177,7 +164,6 @@ public class HueCommand implements CommandExecutor {
 					break;
 				}
 				HuePlugin.codes.setPlayerCode(player, "&0", "black");
-				// player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &0black!"));
 				break;
 				
 			case "&8":
@@ -187,7 +173,6 @@ public class HueCommand implements CommandExecutor {
 					break;
 				}
 				HuePlugin.codes.setPlayerCode(player, "&8", "dark gray");
-				// player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &8dark gray!"));
 				break;
 				
 			case "&7":
@@ -197,7 +182,6 @@ public class HueCommand implements CommandExecutor {
 					break;
 				}
 				HuePlugin.codes.setPlayerCode(player, "&7", "gray");
-				// player.sendMessage(Utils.chat(Utils.PREFIX + "&fColor set to &7gray!"));
 				break;
 				
 			case "version":
@@ -206,6 +190,15 @@ public class HueCommand implements CommandExecutor {
 			case "off":
 				HuePlugin.codes.setPlayerCode(player, "", "&cOFF");
 				break;
+				
+			case "help":
+				player.sendMessage(Utils.chat(Utils.PREFIX) + "Usage: /hue <&9, darkred, off, etc.>");
+				player.sendMessage(Utils.chat(Utils.PREFIX + "&fSets your persistent chat color."));
+				player.sendMessage(Utils.chat("&cAvailable colors: &6&&e<colorcode>"));
+				player.sendMessage(Utils.chat("&11 &22 &33 &44 &55 &66 &77 &88 &99"));
+				player.sendMessage(Utils.chat("&00 &aa &bb &cc &dd &ee &ff"));
+				break;
+					
 			default:
 				player.sendMessage(Utils.chat(Utils.PREFIX + "&f" + args[0] + " &cis not a valid color. :("));
 			}

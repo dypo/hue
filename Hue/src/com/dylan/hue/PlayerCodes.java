@@ -9,14 +9,12 @@ import org.bukkit.entity.Player;
 import com.dylan.hue.utils.Utils;
 
 public class PlayerCodes {
-	// private HashMap<String, String> playerCode;
 	
 	public PlayerCodes() {
 		
 	}
 	
 	public String getPlayerCode(Player player) {
-		// return playerCode.get(player.getName());
 		
 		String code = HuePlugin.getPlugin(HuePlugin.class).getConfig().getString(player.getName());
 		
@@ -24,7 +22,6 @@ public class PlayerCodes {
 	}
 	
 	public void setPlayerCode(Player player, String code, String color) {
-		// playerCode.put(player.getName(), code);
 		if (color.equalsIgnoreCase("off")) {
 			HuePlugin.getPlugin(HuePlugin.class).getConfig().addDefault(player.getName(), null);
 			HuePlugin.getPlugin(HuePlugin.class).getConfig().set(player.getName(), null);

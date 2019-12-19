@@ -3,7 +3,7 @@ package com.dylan.hue;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.dylan.hue.commands.HueCommand;
-import com.dylan.hue.events.PlayerChatEvent;
+import com.dylan.hue.events.Events;
 
 public class HuePlugin extends JavaPlugin {
 	
@@ -13,7 +13,9 @@ public class HuePlugin extends JavaPlugin {
 	public void onEnable() {
 		saveDefaultConfig();
 		
-		getServer().getPluginManager().registerEvents(new PlayerChatEvent(), this);
+		getServer().getPluginManager().registerEvents(new Events(), this);
+		getServer().getPluginManager().registerEvents(new ColorGUI(), this);
+		
 		this.getCommand("hue").setExecutor(new HueCommand());
 	}
 	
