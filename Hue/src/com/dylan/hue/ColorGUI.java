@@ -18,8 +18,65 @@ public class ColorGUI implements InventoryHolder, Listener {
 
 	private final Inventory inv;
 
-	public ColorGUI() {
-		inv = Bukkit.createInventory(this, 18, Utils.chat("&bH&3u&9e &rColors"));
+
+	public ColorGUI(Player player) {
+		String code = HuePlugin.codes.getPlayerCode(player);
+		String color = "";
+		switch (code) {
+		case "&1":
+			color = "Dark Blue";
+			break;
+		case "&2":
+			color = "Dark Green";
+			break;
+		case "&3":
+			color = "Dark Aqua";
+			break;
+		case "&4":
+			color = "Dark Red";
+			break;
+		case "&5":
+			color = "Dark Purple";
+			break;
+		case "&6":
+			color = "Gold";
+			break;
+		case "&7":
+			color = "Gray";
+			break;
+		case "&8":
+			color = "Dark Gray";
+			break;
+		case "&9":
+			color = "Blue";
+			break;
+		case "&0":
+			color = "Black";
+			break;
+		case "&a":
+			color = "Green";
+			break;
+		case "&b":
+			color = "Aqua";
+			break;
+		case "&c":
+			color = "Red";
+			break;
+		case "&d":
+			color = "Light Purple";
+			break;
+		case "&f":
+			color = "White";
+			break;
+		case "&e":
+			color = "Yellow";
+			break;
+		default:
+			color = "OFF";
+			code = "&c&l";
+		}
+		
+		inv = Bukkit.createInventory(this, 18, Utils.chat("&bH&3u&9e &rColors - Have: " + code + color));
 	}
 
 	@Override

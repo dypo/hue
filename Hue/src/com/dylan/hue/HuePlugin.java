@@ -14,7 +14,6 @@ public class HuePlugin extends JavaPlugin {
 		saveDefaultConfig();
 		
 		getServer().getPluginManager().registerEvents(new Events(), this);
-		getServer().getPluginManager().registerEvents(new ColorGUI(), this);
 		
 		this.getCommand("hue").setExecutor(new HueCommand());
 	}

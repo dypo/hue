@@ -26,7 +26,7 @@ public class HueCommand implements CommandExecutor {
 			
 		
 			if (args.length == 0) {
-				ColorGUI gui = new ColorGUI();
+				ColorGUI gui = new ColorGUI(player);
 				gui.initializeItems();
 				gui.openInventory(player);
 				return true;
