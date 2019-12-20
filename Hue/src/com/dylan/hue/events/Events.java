@@ -229,7 +229,9 @@ public class Events implements Listener {
 				return;
 			}
 			player.closeInventory();
-
+			player.sendMessage(Utils.chat("&f----------------------- " + Utils.PREFIX + "&f-----------------------"));
+			player.sendMessage(Utils.chat("&bIf you are trying to disable your color, please use &9/hue off"));
+			player.sendMessage(Utils.chat("----------------------------------------------------"));
 			HuePlugin.codes.setPlayerCode(player, "&f", "white");
 		}
 		

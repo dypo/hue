@@ -12,7 +12,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import com.dylan.hue.utils.Utils;
-import com.sun.istack.internal.NotNull;
+
 
 public class ColorGUI implements InventoryHolder, Listener {
 
@@ -22,7 +22,6 @@ public class ColorGUI implements InventoryHolder, Listener {
 		inv = Bukkit.createInventory(this, 18, Utils.chat("&bH&3u&9e &rColors"));
 	}
 
-	@NotNull
 	@Override
 	public Inventory getInventory() {
 		return inv;

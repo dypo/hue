@@ -1,7 +1,7 @@
 name: Hue
 main: com.dylan.hue.HuePlugin
-version: 1.2.0
-api-version: 1.14
+version: 1.2.1
+api-version: 1.15
 commands:
     hue:
         description: Sets your desired chat color.
