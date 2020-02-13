@@ -20,7 +20,7 @@ import com.dylan.hue.utils.Utils;
 public class ColorGUI implements InventoryHolder, Listener {
 
 	private final Inventory inv;
-
+	int x;
 	/**
 	 * Creates a GUI for a player.
 	 * @param player Player that activates the GUI.

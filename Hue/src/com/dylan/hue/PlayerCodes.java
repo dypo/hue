@@ -8,58 +8,17 @@ import org.bukkit.entity.Player;
 
 import com.dylan.hue.utils.Utils;
 
-import java.sql.Connection;
 
 /**
  * Class that handles online player's color codes.
  * @author dylan
  */
 public class PlayerCodes {
-	private boolean usingDatabase;
-	private Connection connection;
-	private String host, database, username, password;
-	private int port;
 
 	/**
 	 * Creates an object to prepare to store codes. Uses .yml file.
 	 */
 	public PlayerCodes() {
-		usingDatabase = false;
-		host = "localhost";
-		port = 3306;
-		database = "mc_hue";
-		username = "";
-		password = "";
-	}
-
-	/**
-	 * Creates an object to prepare to store codes.
-	 * <p>If usingDatabase is true, then this class
-	 * will store codes in a database.</p>
-	 * @param usingDatabase Whether or not to store using database.
-	 */
-	public PlayerCodes(boolean usingDatabase) {
-		this.usingDatabase = usingDatabase;
-		host = "localhost";
-		port = 3306;
-		database = "mc_hue";
-		username = "";
-		password = "";
-	}
-
-	public void toggleMode() {
-		if (usingDatabase)
-			usingDatabase = false;
-		else
-			usingDatabase = true;
-	}
-
-	/**
-	 * Returns what storage mode plugin is in.
-	 * @return
-	 */
-	public String checkMode() {
-		return (usingDatabase ? "Database" : "YML File");
 	}
 
 	/**
