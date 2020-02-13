@@ -5,8 +5,14 @@ import org.bukkit.plugin.java.JavaPlugin;
 import com.dylan.hue.commands.HueCommand;
 import com.dylan.hue.events.Events;
 
+import java.sql.Connection;
+
+
 public class HuePlugin extends JavaPlugin {
-	
+
+	/**
+	 * Stores every online player's color code.
+	 */
 	public static PlayerCodes codes = new PlayerCodes();
 
 	@Override

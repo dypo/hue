@@ -13,7 +13,11 @@ import com.dylan.hue.HuePlugin;
 import com.dylan.hue.utils.Utils;
 
 public class Events implements Listener {
-	
+
+	/**
+	 * Event for when a player chats.
+	 * @param event
+	 */
 	@EventHandler
 	public void onPlayerChat(AsyncPlayerChatEvent event) {
 		String message = event.getMessage();
@@ -21,62 +25,70 @@ public class Events implements Listener {
 		if (code != null)
 			event.setMessage(Utils.chat(code + message));
 	}
-	
-	
+
+	/**
+	 * Event for when a player clicks on a GUI item.
+	 * @param event
+	 */
 	@EventHandler
 	public void onInventoryClick(InventoryClickEvent event) {
 		String code = HuePlugin.codes.getPlayerCode((Player) event.getWhoClicked());
 		String color = "";
-		switch (code) {
-		case "&1":
-			color = "Dark Blue";
-			break;
-		case "&2":
-			color = "Dark Green";
-			break;
-		case "&3":
-			color = "Dark Aqua";
-			break;
-		case "&4":
-			color = "Dark Red";
-			break;
-		case "&5":
-			color = "Dark Purple";
-			break;
-		case "&6":
-			color = "Gold";
-			break;
-		case "&7":
-			color = "Gray";
-			break;
-		case "&8":
-			color = "Dark Gray";
-			break;
-		case "&9":
-			color = "Blue";
-			break;
-		case "&0":
-			color = "Black";
-			break;
-		case "&a":
-			color = "Green";
-			break;
-		case "&b":
-			color = "Aqua";
-			break;
-		case "&c":
-			color = "Red";
-			break;
-		case "&d":
-			color = "Light Purple";
-			break;
-		case "&f":
-			color = "White";
-			break;
-		case "&e":
-			color = "Yellow";
-			break;
-		default:
+		if (code != null) {
+			switch (code) {
+				case "&1":
+					color = "Dark Blue";
+					break;
+				case "&2":
+					color = "Dark Green";
+					break;
+				case "&3":
+					color = "Dark Aqua";
+					break;
+				case "&4":
+					color = "Dark Red";
+					break;
+				case "&5":
+					color = "Dark Purple";
+					break;
+				case "&6":
+					color = "Gold";
+					break;
+				case "&7":
+					color = "Gray";
+					break;
+				case "&8":
+					color = "Dark Gray";
+					break;
+				case "&9":
+					color = "Blue";
+					break;
+				case "&0":
+					color = "Black";
+					break;
+				case "&a":
+					color = "Green";
+					break;
+				case "&b":
+					color = "Aqua";
+					break;
+				case "&c":
+					color = "Red";
+					break;
+				case "&d":
+					color = "Light Purple";
+					break;
+				case "&f":
+					color = "White";
+					break;
+				case "&e":
+					color = "Yellow";
+					break;
+				default:
+					color = "OFF";
+					code = "&c&l";
+			}
+		} else {
 			color = "OFF";
 			code = "&c&l";
 		}
@@ -294,6 +306,8 @@ public class Events implements Listener {
 			player.closeInventory();
 
 			HuePlugin.codes.setPlayerCode(player, "", "&cOFF");
+
+			return;
 		}
 		
 	}

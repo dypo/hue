@@ -9,6 +9,10 @@ import com.dylan.hue.ColorGUI;
 import com.dylan.hue.HuePlugin;
 import com.dylan.hue.utils.Utils;
 
+/**
+ * Class that handles the main /hue command.
+ * @author dylan
+ */
 public class HueCommand implements CommandExecutor {
 
 	@Override

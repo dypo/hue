@@ -13,65 +13,76 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import com.dylan.hue.utils.Utils;
 
-
+/**
+ * Handles inventory (GUI) screen
+ * @author dylan
+ */
 public class ColorGUI implements InventoryHolder, Listener {
 
 	private final Inventory inv;
 
-
+	/**
+	 * Creates a GUI for a player.
+	 * @param player Player that activates the GUI.
+	 */
 	public ColorGUI(Player player) {
 		String code = HuePlugin.codes.getPlayerCode(player);
 		String color = "";
-		switch (code) {
-		case "&1":
-			color = "Dark Blue";
-			break;
-		case "&2":
-			color = "Dark Green";
-			break;
-		case "&3":
-			color = "Dark Aqua";
-			break;
-		case "&4":
-			color = "Dark Red";
-			break;
-		case "&5":
-			color = "Dark Purple";
-			break;
-		case "&6":
-			color = "Gold";
-			break;
-		case "&7":
-			color = "Gray";
-			break;
-		case "&8":
-			color = "Dark Gray";
-			break;
-		case "&9":
-			color = "Blue";
-			break;
-		case "&0":
-			color = "Black";
-			break;
-		case "&a":
-			color = "Green";
-			break;
-		case "&b":
-			color = "Aqua";
-			break;
-		case "&c":
-			color = "Red";
-			break;
-		case "&d":
-			color = "Light Purple";
-			break;
-		case "&f":
-			color = "White";
-			break;
-		case "&e":
-			color = "Yellow";
-			break;
-		default:
+		if (code != null) {
+			switch (code) {
+				case "&1":
+					color = "Dark Blue";
+					break;
+				case "&2":
+					color = "Dark Green";
+					break;
+				case "&3":
+					color = "Dark Aqua";
+					break;
+				case "&4":
+					color = "Dark Red";
+					break;
+				case "&5":
+					color = "Dark Purple";
+					break;
+				case "&6":
+					color = "Gold";
+					break;
+				case "&7":
+					color = "Gray";
+					break;
+				case "&8":
+					color = "Dark Gray";
+					break;
+				case "&9":
+					color = "Blue";
+					break;
+				case "&0":
+					color = "Black";
+					break;
+				case "&a":
+					color = "Green";
+					break;
+				case "&b":
+					color = "Aqua";
+					break;
+				case "&c":
+					color = "Red";
+					break;
+				case "&d":
+					color = "Light Purple";
+					break;
+				case "&f":
+					color = "White";
+					break;
+				case "&e":
+					color = "Yellow";
+					break;
+				default:
+					color = "OFF";
+					code = "&c&l";
+			}
+		} else {
 			color = "OFF";
 			code = "&c&l";
 		}
@@ -84,6 +95,9 @@ public class ColorGUI implements InventoryHolder, Listener {
 		return inv;
 	}
 
+	/**
+	 * Places items inside that are held in the inventory.
+	 */
 	public void initializeItems() {
 		inv.addItem(createGuiItem(Material.BLUE_CONCRETE, Utils.chat("&1&lDark Blue"), Utils.chat("&fSet your color to &1dark blue")));
 		inv.addItem(createGuiItem(Material.GREEN_CONCRETE, Utils.chat("&2&lDark Green"), Utils.chat("&fSet your color to &2dark green")));
@@ -105,6 +119,13 @@ public class ColorGUI implements InventoryHolder, Listener {
 		inv.addItem(createGuiItem(Material.GLASS, Utils.chat("&fOFF"), Utils.chat("&cDisable your chat color")));
 	}
 
+	/**
+	 * Creates an item to be added to a GUI.
+	 * @param material Material to be added.
+	 * @param name What the item should be named.
+	 * @param lore The lore of the item.
+	 * @return The item to be created.
+	 */
 	private ItemStack createGuiItem(Material material, String name, String...lore) {
 		ItemStack item = new ItemStack(material, 1);
 		ItemMeta meta = item.getItemMeta();
@@ -123,6 +144,11 @@ public class ColorGUI implements InventoryHolder, Listener {
 	}
 
 	// You can open the inventory with this
+
+	/**
+	 * Opens the GUI for a player.
+	 * @param p Player that wants to see the GUI.
+	 */
 	public void openInventory(Player p) {
 		p.openInventory(inv);
 	}
