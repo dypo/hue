@@ -7,5 +7,5 @@ prevent chat spam.
 At it's core, Hue is complete - it does what it was created to do. However, I still like to add/tweak minor features.
 Please contact me if you have any suggestions, and I might implement them if I like them.
 
-Disclaimer: Hue is my first plugin. There might be simpler, more efficient ways to do what Hue does. I am still an amatuer,
+Hue is my first plugin. There might be simpler, more efficient ways to do what Hue does. I am still an amatuer,
 so I am learning. I would love to hear suggestions or advice on how to improve Hue's code.
