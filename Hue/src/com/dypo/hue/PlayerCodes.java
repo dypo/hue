@@ -1,4 +1,4 @@
-package com.dylan.hue;
+package com.dypo.hue;
 
 import org.bukkit.Sound;
 
@@ -6,12 +6,12 @@ import org.bukkit.Sound;
 
 import org.bukkit.entity.Player;
 
-import com.dylan.hue.utils.Utils;
+import com.dypo.hue.utils.Utils;
 
 
 /**
  * Class that handles online player's color codes.
- * @author dylan
+ * @author dypo
  */
 public class PlayerCodes {
 

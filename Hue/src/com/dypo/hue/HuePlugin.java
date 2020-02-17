@@ -1,13 +1,13 @@
-package com.dylan.hue;
+package com.dypo.hue;
 
+import com.dypo.hue.commands.HueCommand;
+import com.dypo.hue.events.Events;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.dylan.hue.commands.HueCommand;
-import com.dylan.hue.events.Events;
-
-import java.sql.Connection;
-
-
+/**
+ * Handles plugin startup.
+ * @author dypo
+ */
 public class HuePlugin extends JavaPlugin {
 
 	/**

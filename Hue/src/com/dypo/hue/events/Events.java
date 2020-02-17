@@ -1,4 +1,4 @@
-package com.dylan.hue.events;
+package com.dypo.hue.events;
 
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -9,8 +9,8 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.inventory.ItemStack;
 
-import com.dylan.hue.HuePlugin;
-import com.dylan.hue.utils.Utils;
+import com.dypo.hue.HuePlugin;
+import com.dypo.hue.utils.Utils;
 
 public class Events implements Listener {
 

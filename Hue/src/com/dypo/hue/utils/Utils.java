@@ -1,4 +1,4 @@
-package com.dylan.hue.utils;
+package com.dypo.hue.utils;
 
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -8,7 +8,7 @@ import net.md_5.bungee.api.chat.TextComponent;
 
 /**
  * Class that provides useful code shortcuts.
- * @author dylan
+ * @author dypo
  */
 public class Utils {
 

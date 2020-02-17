@@ -1,17 +1,17 @@
-package com.dylan.hue.commands;
+package com.dypo.hue.commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import com.dylan.hue.ColorGUI;
-import com.dylan.hue.HuePlugin;
-import com.dylan.hue.utils.Utils;
+import com.dypo.hue.ColorGUI;
+import com.dypo.hue.HuePlugin;
+import com.dypo.hue.utils.Utils;
 
 /**
  * Class that handles the main /hue command.
- * @author dylan
+ * @author dypo
  */
 public class HueCommand implements CommandExecutor {
 
