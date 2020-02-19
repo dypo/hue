@@ -1,6 +1,7 @@
 package com.dypo.hue;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -128,16 +129,11 @@ public class ColorGUI implements InventoryHolder, Listener {
 	 */
 	private ItemStack createGuiItem(Material material, String name, String...lore) {
 		ItemStack item = new ItemStack(material, 1);
+
+		ArrayList<String> metalore = new ArrayList<String>(Arrays.asList(lore));
+
 		ItemMeta meta = item.getItemMeta();
 		meta.setDisplayName(name);
-		ArrayList<String> metalore = new ArrayList<String>();    
-
-		for(String lorecomments : lore) {
-
-			metalore.add(lorecomments);
-
-		}
-
 		meta.setLore(metalore);
 		item.setItemMeta(meta);
 		return item;

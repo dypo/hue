@@ -1,6 +1,6 @@
 name: Hue
 main: com.dypo.hue.HuePlugin
-version: 1.2.3
+version: 1.2.4
 api-version: 1.15
 commands:
     hue:

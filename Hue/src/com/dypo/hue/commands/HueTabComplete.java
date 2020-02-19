@@ -16,19 +16,18 @@ public class HueTabComplete implements TabCompleter {
 
     /**
      * Called on every tab complete.
-     * @param sender Who sent the cmd
+     * @param sender  Who sent the cmd
      * @param command The cmd
-     * @param alias Alias for cmd
-     * @param args Command arguments
+     * @param alias   Alias for cmd
+     * @param args    Command arguments
      * @return List of strings to tab complete to.
      */
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
         if (sender instanceof Player) {
             Player player = (Player) sender;
-            if (args.length <= 1) {
+            if (args.length == 1) {
                 List<String> list = new ArrayList<>();
-
                 list.add("darkblue"); // &1
                 list.add("darkgreen"); // &2
                 list.add("darkaqua"); // &3
@@ -50,7 +49,6 @@ public class HueTabComplete implements TabCompleter {
                 return list;
             }
         }
-
         return null;
     }
 }

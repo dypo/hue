@@ -206,11 +206,10 @@ public class HueCommand implements CommandExecutor {
 			default:
 				player.sendMessage(Utils.chat(Utils.PREFIX + "&f" + args[0] + " &cis not a valid color. :("));
 			}
-			return true;	
 		}
 		else {
 			player.sendMessage(Utils.chat("&cYou do not have permission for this."));
-			return true;
 		}
+		return true;
 	}
 }

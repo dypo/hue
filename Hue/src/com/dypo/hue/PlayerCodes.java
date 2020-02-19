@@ -27,10 +27,8 @@ public class PlayerCodes {
 	 * @return The code of the player.
 	 */
 	public String getPlayerCode(Player player) {
-		
-		String code = HuePlugin.getPlugin(HuePlugin.class).getConfig().getString(player.getName());
-		
-		return code;
+
+		return HuePlugin.getPlugin(HuePlugin.class).getConfig().getString(player.getName());
 	}
 
 	/**
