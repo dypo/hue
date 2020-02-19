@@ -6,6 +6,7 @@ import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -44,7 +45,15 @@ public class HueTabComplete implements TabCompleter {
                 list.add("lightpurple"); // &d
                 list.add("yellow"); // &e
                 list.add("white"); // &f
-                list.add("OFF"); // OFF
+                list.add("OFF");
+                list.add("version");
+                list.add("help");
+                Collections.sort(list);
+                /*
+                 If a player starts typing the first argument and it doesn't match a color,
+                 that color will be removed from the list.
+                 */
+                list.removeIf(s -> !s.toLowerCase().startsWith(args[0].toLowerCase()));
 
                 return list;
             }
