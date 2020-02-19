@@ -26,7 +26,7 @@ public class HueTabComplete implements TabCompleter {
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
         if (sender instanceof Player) {
             Player player = (Player) sender;
-            if (args.length == 1) {
+            if (args.length <= 1) {
                 List<String> list = new ArrayList<>();
                 list.add("darkblue"); // &1
                 list.add("darkgreen"); // &2
