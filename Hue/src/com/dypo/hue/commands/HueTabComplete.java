@@ -39,13 +39,13 @@ public class HueTabComplete implements TabCompleter {
                 list.add("darkgray"); // &8
                 list.add("blue"); // &9
                 list.add("black"); // &0
-                list.add("green");
-                list.add("aqua");
-                list.add("red");
-                list.add("lightpurple");
-                list.add("yellow");
-                list.add("white");
-                list.add("OFF");
+                list.add("green"); // &a
+                list.add("aqua"); // &b
+                list.add("red"); // &c
+                list.add("lightpurple"); // &d
+                list.add("yellow"); // &e
+                list.add("white"); // &f
+                list.add("OFF"); // OFF
 
                 return list;
             }
