@@ -1,6 +1,7 @@
 package com.dypo.hue;
 
 import com.dypo.hue.commands.HueCommand;
+import com.dypo.hue.commands.HueTabComplete;
 import com.dypo.hue.events.Events;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -22,6 +23,7 @@ public class HuePlugin extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new Events(), this);
 		
 		this.getCommand("hue").setExecutor(new HueCommand());
+		this.getCommand("hue").setTabCompleter(new HueTabComplete());
 	}
 	
 	@Override
