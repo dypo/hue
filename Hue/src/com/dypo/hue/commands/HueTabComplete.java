@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  * First attempt at command tab complete.
- * @author dypo
+ * @author Dypo
  */
 public class HueTabComplete implements TabCompleter {
 
@@ -21,7 +21,7 @@ public class HueTabComplete implements TabCompleter {
      * @param command The cmd
      * @param alias   Alias for cmd
      * @param args    Command arguments
-     * @return List of strings to tab complete to.
+     * @return List of strings to send to the tab completer.
      */
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {

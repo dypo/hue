@@ -1,5 +1,7 @@
 package com.dypo.hue.events;
 
+import com.dypo.hue.utils.UpdateChecker;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -7,11 +9,16 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.ClickType;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
 
 import com.dypo.hue.HuePlugin;
 import com.dypo.hue.utils.Utils;
 
+/**
+ * Handles events.
+ * @author Dypo
+ */
 public class Events implements Listener {
 
 	/**
@@ -24,6 +31,14 @@ public class Events implements Listener {
 		String code = HuePlugin.codes.getPlayerCode(event.getPlayer());
 		if (code != null)
 			event.setMessage(Utils.chat(code + message));
+	}
+
+	@EventHandler
+	public void onPlayerJoin(PlayerJoinEvent event) {
+		Player player = event.getPlayer();
+		if (player.hasPermission("hue.update")) {
+			Utils.checkForNewVersion(player, true);
+		}
 	}
 
 	/**

@@ -1,5 +1,6 @@
 package com.dypo.hue.commands;
 
+import com.dypo.hue.utils.UpdateChecker;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -11,7 +12,7 @@ import com.dypo.hue.utils.Utils;
 
 /**
  * Class that handles the main /hue command.
- * @author dypo
+ * @author Dypo
  */
 public class HueCommand implements CommandExecutor {
 
@@ -190,6 +191,9 @@ public class HueCommand implements CommandExecutor {
 				
 			case "version":
 				player.sendMessage(Utils.chat(Utils.PREFIX + "&bH&3u&9e &3" + HuePlugin.getPlugin(HuePlugin.class).getDescription().getVersion() + " &b- by &9Dypo"));
+				if (player.hasPermission("hue.update"))
+					Utils.checkForNewVersion(player, false);
+				player.sendMessage(Utils.chat("&9https://www.spigotmc.org/resources/hue-color-chat.75281/"));
 				break;
 			case "off":
 				HuePlugin.codes.setPlayerCode(player, "", "&cOFF");
