@@ -9,3 +9,6 @@ Please contact me if you have any suggestions, and I might implement them if I l
 
 Hue is my first plugin. There might be simpler, more efficient ways to do what Hue does. I am still an amatuer,
 so I am learning. I would love to hear suggestions or advice on how to improve Hue's code.
+
+If you would like to give Hue a shot, download it here: https://www.spigotmc.org/resources/hue-color-chat.75281/
+If you like it, please give it a good review! If not, tell me what I can do to improve it. :)
