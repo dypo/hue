@@ -30,7 +30,10 @@ public class Events implements Listener {
 		String message = event.getMessage();
 		String code = HuePlugin.codes.getPlayerCode(event.getPlayer());
 		if (code != null)
-			event.setMessage(Utils.chat(code + message));
+			if (code.startsWith("#"))
+				event.setMessage(net.md_5.bungee.api.ChatColor.of(code) + message);
+			else
+				event.setMessage(Utils.chat(code + message));
 	}
 
 	@EventHandler
@@ -50,66 +53,74 @@ public class Events implements Listener {
 		String code = HuePlugin.codes.getPlayerCode((Player) event.getWhoClicked());
 		String color = "";
 		if (code != null) {
-			switch (code) {
-				case "&1":
-					color = "Dark Blue";
-					break;
-				case "&2":
-					color = "Dark Green";
-					break;
-				case "&3":
-					color = "Dark Aqua";
-					break;
-				case "&4":
-					color = "Dark Red";
-					break;
-				case "&5":
-					color = "Dark Purple";
-					break;
-				case "&6":
-					color = "Gold";
-					break;
-				case "&7":
-					color = "Gray";
-					break;
-				case "&8":
-					color = "Dark Gray";
-					break;
-				case "&9":
-					color = "Blue";
-					break;
-				case "&0":
-					color = "Black";
-					break;
-				case "&a":
-					color = "Green";
-					break;
-				case "&b":
-					color = "Aqua";
-					break;
-				case "&c":
-					color = "Red";
-					break;
-				case "&d":
-					color = "Light Purple";
-					break;
-				case "&f":
-					color = "White";
-					break;
-				case "&e":
-					color = "Yellow";
-					break;
-				default:
-					color = "OFF";
-					code = "&c&l";
+			if (code.startsWith("#")) {
+				if (!event.getView().getTitle().equals(Utils.chat("&bH&3u&9e &rColors - Have: ") + Utils.chatHex(code.toUpperCase(), code))) {
+					return;
+				}
+			}
+			else {
+				switch (code) {
+					case "&1":
+						color = "Dark Blue";
+						break;
+					case "&2":
+						color = "Dark Green";
+						break;
+					case "&3":
+						color = "Dark Aqua";
+						break;
+					case "&4":
+						color = "Dark Red";
+						break;
+					case "&5":
+						color = "Dark Purple";
+						break;
+					case "&6":
+						color = "Gold";
+						break;
+					case "&7":
+						color = "Gray";
+						break;
+					case "&8":
+						color = "Dark Gray";
+						break;
+					case "&9":
+						color = "Blue";
+						break;
+					case "&0":
+						color = "Black";
+						break;
+					case "&a":
+						color = "Green";
+						break;
+					case "&b":
+						color = "Aqua";
+						break;
+					case "&c":
+						color = "Red";
+						break;
+					case "&d":
+						color = "Light Purple";
+						break;
+					case "&f":
+						color = "White";
+						break;
+					case "&e":
+						color = "Yellow";
+						break;
+					default:
+						color = "OFF";
+						code = "&c&l";
+				}
 			}
 		} else {
 			color = "OFF";
 			code = "&c&l";
 		}
-		if (!event.getView().getTitle().equals(Utils.chat("&bH&3u&9e &rColors - Have: " + code + color))) {
+		if (!event.getView().getTitle().equals(Utils.chat("&bH&3u&9e &rColors - Have: " + code + color)) && !code.startsWith("#")) {
 			return;
 		}
+
 		if (event.getClick().equals(ClickType.NUMBER_KEY)){
 			event.setCancelled(true);
 		}

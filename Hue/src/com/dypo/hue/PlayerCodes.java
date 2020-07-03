@@ -27,7 +27,6 @@ public class PlayerCodes {
 	 * @return The code of the player.
 	 */
 	public String getPlayerCode(Player player) {
-
 		return HuePlugin.getPlugin(HuePlugin.class).getConfig().getString(player.getName());
 	}
 
@@ -48,6 +47,20 @@ public class PlayerCodes {
 		}
 		HuePlugin.getPlugin(HuePlugin.class).saveConfig();
 		Utils.sendActionBar(player, Utils.chat("&bH&3u&9e &f- Chat color has been changed to " + code + color + "!"));
+		player.playSound(player.getLocation(), Sound.UI_BUTTON_CLICK, 9, 4);
+	}
+
+	/**
+	 *
+	 * @param player
+	 * @param hex
+	 */
+	public void setPlayerHex(Player player, String hex) {
+		HuePlugin.getPlugin(HuePlugin.class).getConfig().addDefault(player.getName(), hex);
+		HuePlugin.getPlugin(HuePlugin.class).getConfig().set(player.getName(), hex);
+
+		HuePlugin.getPlugin(HuePlugin.class).saveConfig();
+		Utils.sendActionBar(player, Utils.chat("&bH&3u&9e &f- Chat color has been changed to ") + Utils.chatHex(hex.toUpperCase(), hex));
 		player.playSound(player.getLocation(), Sound.UI_BUTTON_CLICK, 9, 4);
 	}
 }

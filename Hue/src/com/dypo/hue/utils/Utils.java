@@ -1,9 +1,9 @@
 package com.dypo.hue.utils;
 
 import com.dypo.hue.HuePlugin;
-import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
+import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 
@@ -25,6 +25,16 @@ public class Utils {
 	 */
 	public static String chat(String str) {
 		return ChatColor.translateAlternateColorCodes('&', str);
+	}
+
+	/**
+	 * Converts chat to a given hex code's color. This assumes the hex code is valid.
+	 * @param str The message
+	 * @param hex Hex code
+	 * @return Colored text.
+	 */
+	public static String chatHex(String str, String hex) {
+		return ChatColor.of(hex) + str;
 	}
 
 	/**
