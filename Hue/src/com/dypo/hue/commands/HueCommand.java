@@ -41,7 +41,7 @@ public class HueCommand implements CommandExecutor {
 
 			// HEX CODE
 			if (colorText.startsWith("#")) {
-				if (player.hasPermission("hue.use.hex")) {
+				if (player.hasPermission("hue.use.hex") || player.hasPermission("hue.use.*")) {
 					boolean validHex = true;
 					if (colorText.length() == 7) {
 						for (int i = 1; i < colorText.length(); i++) {
@@ -70,7 +70,7 @@ public class HueCommand implements CommandExecutor {
 
 					case "&1":
 					case "darkblue":
-						if (!player.hasPermission("hue.use.darkblue")) {
+						if (!player.hasPermission("hue.use.darkblue") || !player.hasPermission("hue.use.*")) {
 							player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
 							break;
 						}
@@ -80,7 +80,7 @@ public class HueCommand implements CommandExecutor {
 
 					case "&c":
 					case "red":
-						if (!player.hasPermission("hue.use.red")) {
+						if (!player.hasPermission("hue.use.red") || !player.hasPermission("hue.use.*")) {
 							player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
 							break;
 						}
@@ -89,7 +89,7 @@ public class HueCommand implements CommandExecutor {
 
 					case "&4":
 					case "darkred":
-						if (!player.hasPermission("hue.use.darkred")) {
+						if (!player.hasPermission("hue.use.darkred") || !player.hasPermission("hue.use.*")) {
 							player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
 							break;
 						}
@@ -98,7 +98,7 @@ public class HueCommand implements CommandExecutor {
 
 					case "&6":
 					case "gold":
-						if (!player.hasPermission("hue.use.gold")) {
+						if (!player.hasPermission("hue.use.gold") || !player.hasPermission("hue.use.*")) {
 							player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
 							break;
 						}
@@ -107,7 +107,7 @@ public class HueCommand implements CommandExecutor {
 
 					case "&e":
 					case "yellow":
-						if (!player.hasPermission("hue.use.yellow")) {
+						if (!player.hasPermission("hue.use.yellow") || !player.hasPermission("hue.use.*")) {
 							player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
 							break;
 						}
@@ -116,7 +116,7 @@ public class HueCommand implements CommandExecutor {
 
 					case "&2":
 					case "darkgreen":
-						if (!player.hasPermission("hue.use.darkgreen")) {
+						if (!player.hasPermission("hue.use.darkgreen") || !player.hasPermission("hue.use.*")) {
 							player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
 							break;
 						}
@@ -125,7 +125,7 @@ public class HueCommand implements CommandExecutor {
 
 					case "&a":
 					case "green":
-						if (!player.hasPermission("hue.use.green")) {
+						if (!player.hasPermission("hue.use.green") || !player.hasPermission("hue.use.*")) {
 							player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
 							break;
 						}
@@ -133,7 +133,7 @@ public class HueCommand implements CommandExecutor {
 						break;
 					case "&b":
 					case "aqua":
-						if (!player.hasPermission("hue.use.aqua")) {
+						if (!player.hasPermission("hue.use.aqua") || !player.hasPermission("hue.use.*")) {
 							player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
 							break;
 						}
@@ -142,7 +142,7 @@ public class HueCommand implements CommandExecutor {
 
 					case "&3":
 					case "darkaqua":
-						if (!player.hasPermission("hue.use.darkaqua")) {
+						if (!player.hasPermission("hue.use.darkaqua") || !player.hasPermission("hue.use.*")) {
 							player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
 							break;
 						}
@@ -151,7 +151,7 @@ public class HueCommand implements CommandExecutor {
 
 					case "&9":
 					case "blue":
-						if (!player.hasPermission("hue.use.blue")) {
+						if (!player.hasPermission("hue.use.blue") || !player.hasPermission("hue.use.*")) {
 							player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
 							break;
 						}
@@ -160,7 +160,7 @@ public class HueCommand implements CommandExecutor {
 
 					case "&d":
 					case "lightpurple":
-						if (!player.hasPermission("hue.use.lightpurple")) {
+						if (!player.hasPermission("hue.use.lightpurple") || !player.hasPermission("hue.use.*")) {
 							player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
 							break;
 						}
@@ -169,7 +169,7 @@ public class HueCommand implements CommandExecutor {
 
 					case "&5":
 					case "darkpurple":
-						if (!player.hasPermission("hue.use.darkpurple")) {
+						if (!player.hasPermission("hue.use.darkpurple") || !player.hasPermission("hue.use.*")) {
 							player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
 							break;
 						}
@@ -178,7 +178,7 @@ public class HueCommand implements CommandExecutor {
 
 					case "&f":
 					case "white":
-						if (!player.hasPermission("hue.use.white")) {
+						if (!player.hasPermission("hue.use.white") || !player.hasPermission("hue.use.*")) {
 							player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
 							break;
 						}
@@ -191,7 +191,7 @@ public class HueCommand implements CommandExecutor {
 
 					case "&0":
 					case "black":
-						if (!player.hasPermission("hue.use.black")) {
+						if (!player.hasPermission("hue.use.black") || !player.hasPermission("hue.use.*")) {
 							player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
 							break;
 						}
@@ -200,7 +200,7 @@ public class HueCommand implements CommandExecutor {
 
 					case "&8":
 					case "darkgray":
-						if (!player.hasPermission("hue.use.darkgray")) {
+						if (!player.hasPermission("hue.use.darkgray") || !player.hasPermission("hue.use.*")) {
 							player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
 							break;
 						}
@@ -209,7 +209,7 @@ public class HueCommand implements CommandExecutor {
 
 					case "&7":
 					case "gray":
-						if (!player.hasPermission("hue.use.gray")) {
+						if (!player.hasPermission("hue.use.gray") || !player.hasPermission("hue.use.*")) {
 							player.sendMessage(Utils.chat("&cYou do not have permission to use this color."));
 							break;
 						}
