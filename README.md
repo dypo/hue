@@ -1,4 +1,4 @@
-# hue by Dypo
+# hue
 Hue is a simple plugin that lets players choose a persistant color that they can chat in, with the ability to change it
 whenever they like, or disable it. Hue comes with an easy GUI to help players select their colors. Colors can also be
 selected using commands. Hue also feautures sounds when selecting or disabling their color, and Action Bar support to
